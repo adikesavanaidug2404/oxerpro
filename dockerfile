@@ -13,14 +13,5 @@ COPY /css /usr/share/nginx/html/
 # Expose port 80 for web traffic
 EXPOSE 80
 
-# Verify file permissions
-RUN chmod 644 /usr/share/nginx/html/index.html && \
-    chmod 644 /usr/share/nginx/html/class.html && \
-    chmod 644 /usr/share/nginx/html/blog.html && \
-    chmod 644 /usr/share/nginx/html/about.html && \
-    chmod 644 /usr/share/nginx/html//js && \
-    chmod 644 /usr/share/nginx/html//images &&\
-    chmod 644 /usr/share/nginx/html///css
-
 # Start Nginx when the container launches
 CMD ["nginx", "-g", "daemon off;"]
